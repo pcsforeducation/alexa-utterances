@@ -156,6 +156,7 @@ function generateUtterances(str, slots, dictionary, exhaustiveUtterances) {
 
   // Convert all {-|Name} to {Name} to accomodate slot literals
   for (var idx in utterances) {
+    if (!utterances.hasOwnProperty(idx)) continue;
     utterances[idx] = utterances[idx].replace(/\{\-\|/g, "{");
   }
 
